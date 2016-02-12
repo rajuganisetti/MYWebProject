@@ -70,13 +70,11 @@ public class SignUp extends HttpServlet {
 	         ps.executeUpdate();
 	         out.println("Registration completed succesfully");	         
 	         conn.close();
-	         String curdir=System.getProperty("user.dir")+"/workstation/MYWebProject/Users/";
-	        
-	         String dir=curdir+username;
-	       
+	         String curdir=System.getProperty("user.dir")+"/workstation/MYWebProject/Users/";	        
+	         String dir=curdir+username;	       
 	 		 new Foldercreate().FolderCreation(dir);
-	         RequestDispatcher view = request.getRequestDispatcher("/login.html");
-	    	  
+	 		 
+	         RequestDispatcher view = request.getRequestDispatcher("/login.html");	    	  
 	    	 view.forward(request, response);
 	         
 	  }
